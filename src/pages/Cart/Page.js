@@ -17,13 +17,14 @@ const Page = () => {
 
     const fetch = async () => {
         let cart = await fetchCart({url: API_URL, params: {user_id: userData._id}})
+        cart = cart.data;
 
         const productData = await Promise.all(
             cart.map(item => fetchPost({url: API_URL, params: {post_id: item.product_id}}))
         )
 
         cart = cart.map((item, i) => ({
-            ...item, product_data: productData[i]
+            ...item, product_data: productData[i].data
         }))
 
         setCartData(cart)
@@ -48,6 +49,7 @@ const Page = () => {
 
     const handleBuy = async () => {
         await buyCart({url: API_URL, params: {user_id: userData._id}})
+        await fetch()
         await fetch()
     }
 

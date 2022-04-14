@@ -5,7 +5,7 @@ export const doLoginMock = async ({username, password}) => Promise.resolve()
 export const fetchPrevLoginMock = async ({user_id}) => Promise.resolve()
 
 // REGISTER
-export const doRegisterMock = async ({display_name, username, password}) => Promise.resolve()
+export const doRegisterMock = async ({display_name, username, password, confirm_password}) => Promise.resolve()
 
 // USER
 export const fetchUserMock = async ({user_id}) => Promise.resolve()

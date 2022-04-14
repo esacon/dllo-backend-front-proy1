@@ -13,7 +13,7 @@ const Page = () => {
     React.useEffect(() => {
         const fetch = async () => {
             const posts = await fetchRecentPosts({url: API_URL})
-            setRecents(posts)
+            setRecents(posts.data)
         }
         fetch()
     }, [])

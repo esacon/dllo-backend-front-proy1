@@ -16,10 +16,10 @@ const Component = ({data, showAuthor, showProduct}) => {
     React.useEffect(() => {
         const fetch = async () => {
             const author = await fetchUser({url: API_URL, params: {user_id: data.user_id}})
-            setAuthorData(author)
+            setAuthorData(author.data)
 
             const product = await fetchPost({url: API_URL, params: {post_id: data.product_id}})
-            setProductData(product)
+            setProductData(product.data)
         }
         fetch()
     }, [])

@@ -22,7 +22,7 @@ const Page = () => {
 
     const onSubmit = async (data) => doLogin({url: API_URL, params: data})
     const onSuccess = (data) => {
-        dispatch(dispatch => setUser(dispatch, data))
+        dispatch(dispatch => setUser(dispatch, data.data))
         navigate('/')
     }
 

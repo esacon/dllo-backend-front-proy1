@@ -42,13 +42,13 @@ export const fetchPrevLogin = async ({url, params}) => {
 
 // REGISTER
 export const doRegister = async ({url, params}) => {
-    const {name: display_name, username, password} = params
+    const {name: display_name, username, password, confirm_password} = params
     if (!url) {
-        return doRegisterMock({display_name, username, password})
+        return doRegisterMock({display_name, username, password, confirm_password})
     } else {
         return axios.post(
             `${url}/users/register`,
-            {display_name, username, password}
+            {display_name, username, password, confirm_password}
         )
     }
 }
@@ -194,7 +194,7 @@ export const fetchReviews = async ({url, params}) => {
     if (!url) {
         return fetchReviewsMock({product_id, user_id})
     } else {
-        return axios.delete(
+        return axios.get(
             `${url}/reviews/`,
             {params: {product_id, user_id}}
         )

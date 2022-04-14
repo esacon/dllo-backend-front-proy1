@@ -23,13 +23,13 @@ const Page = () => {
     React.useEffect(() => {
         const fetch = async () => {
             const user = await fetchUser({url: API_URL, params: {user_id: params.id}})
-            setUserData(user)
+            setUserData(user.data)
 
             const posts = await fetchUserPosts({url: API_URL, params: {user_id: params.id}})
-            setUserPosts(posts)
+            setUserPosts(posts.data)
 
             const reviews = await fetchReviews({url: API_URL, params: {user_id: params.id}})
-            setUserReviews(reviews)
+            setUserReviews(reviews.data)
         }
         fetch()
     }, [])

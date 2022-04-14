@@ -18,11 +18,11 @@ const Page = () => {
         let history = await fetchHistory({url: API_URL, params: {user_id: userData._id}})
 
         const productData = await Promise.all(
-            history.map(item => fetchPost({url: API_URL, params: {post_id: item.product_id}}))
+            history.data.map(item => fetchPost({url: API_URL, params: {post_id: item.product_id}}))
         )
 
-        history = history.map((item, i) => ({
-            ...item, product_data: productData[i]
+        history = history.data.map((item, i) => ({
+            ...item, product_data: productData[i].data
         }))
 
         setHistoryData(history)

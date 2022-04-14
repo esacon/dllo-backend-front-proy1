@@ -30,7 +30,7 @@ export const fetchUser = async (dispatch) => {
     const url = localStorage.getItem('backend_url');
     const data = await fetchPrevLogin({url, params: {user_id}}).catch(() => undefined)
     if (data) {
-        dispatch(dataReceived(data))
+        dispatch(dataReceived(data.data))
     }
 }
 

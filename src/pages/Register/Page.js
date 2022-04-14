@@ -23,7 +23,7 @@ const Page = () => {
 
     const onSubmit = async (data) => doRegister({url: API_URL, params: data})
     const onSuccess = (data) => {
-        dispatch(dispatch => setUser(dispatch, data))
+        dispatch(dispatch => setUser(dispatch, data.data))
         navigate('/')
     }
 
