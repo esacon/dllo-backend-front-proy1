@@ -6,7 +6,7 @@ La API debe satisfacer cada endpoint que está utilizando el frontend, de manera
 
 Los endpoints a desarrollar incluyen, pero no están limitados a:
 - [ ] Login con usuario y contraseña.
-- [ ] Login con token.
+- [ ] Login con token. (El "token" siendo el _id de un user)
 - [ ] Registro de usuario.
 - [ ] Get usuario
 - [ ] Get publicaciones de un usuario

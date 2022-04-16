@@ -21,10 +21,11 @@ export const doLogin = async ({url, params}) => {
     if (!url) {
         return doLoginMock({username, password})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/users/login`,
             {username, password}
         )
+        return res.data
     }
 }
 
@@ -33,10 +34,11 @@ export const fetchPrevLogin = async ({url, params}) => {
     if (!url) {
         return fetchPrevLoginMock({user_id})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/users/prev-login`,
             {user_id}
         )
+        return res.data
     }
 }
 
@@ -46,10 +48,11 @@ export const doRegister = async ({url, params}) => {
     if (!url) {
         return doRegisterMock({display_name, username, password})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/users/register`,
             {display_name, username, password}
         )
+        return res.data
     }
 }
 
@@ -108,10 +111,11 @@ export const createPost = async ({url, params}) => {
     if (!url) {
         return createPostMock({owner_id, img_url, display_name, description, price})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/posts/`,
             {owner_id, img_url, display_name, description, price}
         )
+        return res.data
     }
 }
 
@@ -133,10 +137,11 @@ export const addToCart = async ({url, params}) => {
     if (!url) {
         return addToCartMock({product_id, user_id})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/cart/`,
             {product_id, user_id}
         )
+        return res.data
     }
 }
 
@@ -157,10 +162,11 @@ export const buyCart = async ({url, params}) => {
     if (!url) {
         return buyCartMock({user_id})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/cart/buy`,
             {user_id}
         )
+        return res.data
     }
 }
 
@@ -182,10 +188,11 @@ export const postReview = async ({url, params}) => {
     if (!url) {
         return postReviewMock({user_id, product_id, rating, description})
     } else {
-        return axios.post(
+        const res = await axios.post(
             `${url}/reviews/`,
             {user_id, product_id, rating, description}
         )
+        return res.data
     }
 }
 
