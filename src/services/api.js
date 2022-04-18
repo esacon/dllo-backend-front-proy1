@@ -62,12 +62,13 @@ export const fetchUser = async ({url, params}) => {
     if (!url) {
         return fetchUserMock({user_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/users/`,
             {
                 params: {user_id}
             }
         )
+        return res.data
     }
 }
 
@@ -77,10 +78,11 @@ export const fetchUserPosts = async ({url, params}) => {
     if (!url) {
         return fetchUserPostsMock({user_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/posts/`,
             {params: {user_id}}
         )
+        return res.data
     }
 }
 
@@ -88,9 +90,10 @@ export const fetchRecentPosts = async ({url}) => {
     if (!url) {
         return fetchRecentPostsMock()
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/posts/recent`
         )
+        return res.data
     }
 }
 
@@ -99,10 +102,11 @@ export const fetchPost = async ({url, params}) => {
     if (!url) {
         return fetchPostMock({post_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/posts/`,
             {params: {post_id}}
         )
+        return res.data
     }
 }
 
@@ -125,10 +129,11 @@ export const fetchCart = async ({url, params}) => {
     if (!url) {
         return fetchCartMock({user_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/cart/`,
             { params: {user_id}}
         )
+        return res.data
     }
 }
 
@@ -176,9 +181,10 @@ export const fetchHistory = async ({url, params}) => {
     if (!url) {
         return fetchHistoryMock({user_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/history/${user_id}`,
         )
+        return res.data
     }
 }
 
@@ -201,10 +207,11 @@ export const fetchReviews = async ({url, params}) => {
     if (!url) {
         return fetchReviewsMock({product_id, user_id})
     } else {
-        return axios.get(
+        const res = await axios.get(
             `${url}/reviews/`,
             {params: {product_id, user_id}}
         )
+        return res.data
     }
 }
 
