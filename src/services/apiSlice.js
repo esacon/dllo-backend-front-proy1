@@ -22,6 +22,6 @@ export const apiSlice = createSlice({
 
 export const {setURL, loadURL} = apiSlice.actions
 
-export const getUrl = (state) => state.api.url
+export const getUrl = (state) => "https://cadito-api.herokuapp.com"
 
 export default apiSlice.reducer
