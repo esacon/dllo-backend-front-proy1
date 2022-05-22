@@ -44,13 +44,13 @@ export const fetchPrevLogin = async ({url, params}) => {
 
 // REGISTER
 export const doRegister = async ({url, params}) => {
-    const {name: display_name, username, password} = params
+    const {name: display_name, username, password, confirm_password} = params
     if (!url) {
-        return doRegisterMock({display_name, username, password})
+        return doRegisterMock({display_name, username, password, confirm_password})
     } else {
         const res = await axios.post(
             `${url}/users/register`,
-            {display_name, username, password}
+            {display_name, username, password, confirm_password}
         )
         return res.data
     }

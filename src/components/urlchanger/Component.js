@@ -5,7 +5,7 @@ import {useDispatch, useSelector} from "react-redux";
 import {getUrl, loadURL, setURL} from "../../services/apiSlice";
 
 const Component = () => {
-    const [formData, setFormData] = React.useState({url: ""})
+    const [formData, setFormData] = React.useState({url: "https://cadito-api.herokuapp.com/"})
     const dispatch = useDispatch()
     const API_URL = useSelector(getUrl)
 
@@ -24,18 +24,7 @@ const Component = () => {
         dispatch(setURL(url))
     }
 
-    return <div className={'url-changer'}>
-        <span>
-            Backend URL:
-        </span>
-        <Input
-            onChange={onChange}
-            type={"text"}
-            placeholder={'localhost:3000'}
-            formData={formData}
-            name={"url"}
-        />
-    </div>
+    return <></>
 }
 
 export default Component
